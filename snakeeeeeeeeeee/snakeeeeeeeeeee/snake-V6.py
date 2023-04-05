@@ -120,6 +120,10 @@ def computeNextFrame(numFrame,coordonnee, objet, objet_2,objet_3):
             mort = True
     for p in range(len(objet_3)):
         if coordonnee[0][0] == objet_3 [0][0] and coordonnee[p][1] == objet_3 [p][1]:
+            objet_3[0][0] = randint(1,24)* 20
+            objet_3[0][1] = randint(1,24)* 20
+            # Ajout d'un noeud au serpent (à la même place que le dernier noeud) et modification score
+            coordonnee.append([-20, -20]) # Caché pour l'instant
             score=score-5
     game_over = False     
     # On test la position de la tête par rapport aux noeuds du serpent
@@ -168,15 +172,15 @@ if __name__ == "__main__":
     
     # Second objet (le poison)
     objet_2=[]
-    a = randint(1,24)
-    b = randint(1,24)
+    a = randint(5,24)
+    b = randint(5,24)
     objet_2.append([a*20, b*20, 0])
 
     # Troisieme objet (pomme pige qui fait perdre en score)
     objet_3=[]
     c = randint(1,24)
     d = randint(1,24)
-    objet_3.append([a*15, b*15, 0])
+    objet_3.append([a*20, b*20, 0])
     
     # Construction de la première étape de simulation
     computeNextFrame(0,coordonnee, objet, objet_2, objet_3)

@@ -172,15 +172,15 @@ if __name__ == "__main__":
     
     # Second objet (le poison)
     objet_2=[]
-    a = randint(5,24)
-    b = randint(5,24)
+    a = randint(1,24)
+    b = randint(1,24)
     objet_2.append([a*20, b*20, 0])
 
     # Troisieme objet (pomme pige qui fait perdre en score)
     objet_3=[]
     c = randint(1,24)
     d = randint(1,24)
-    objet_3.append([a*20, b*20, 0])
+    objet_3.append([c*20, d*20, 0])
     
     # Construction de la première étape de simulation
     computeNextFrame(0,coordonnee, objet, objet_2, objet_3)
